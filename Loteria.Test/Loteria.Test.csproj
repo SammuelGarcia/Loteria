@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F2D9D36-6C53-423A-9F0F-6F8987B191E8}</ProjectGuid>
+    <ProjectGuid>{69BBB3A6-27EA-4A81-B9E3-F9D23D5C63D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Loteria.Domain</RootNamespace>
-    <AssemblyName>Loteria.Domain</AssemblyName>
+    <RootNamespace>Loteria.Test</RootNamespace>
+    <AssemblyName>Loteria.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,25 +34,33 @@
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Lucene.Net, Version=2.9.2.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lucene.2.9.2.2\lib\Lucene.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate.Search, Version=2.0.2.4000, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.Search.2.0.2.4000\lib\Net35\NHibernate.Search.dll</HintPath>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,34 +72,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aposta.cs" />
-    <Compile Include="ApostaDuplaSena.cs" />
-    <Compile Include="ApostaSena.cs" />
-    <Compile Include="ApostaLoto.cs" />
-    <Compile Include="DsuplaSena.cs" />
-    <Compile Include="IAggregateRoot.cs" />
-    <Compile Include="Map\ApostaMap.cs" />
-    <Compile Include="Map\ProcessaJogosMap.cs" />
-    <Compile Include="repo\BaseRepository.cs" />
-    <Compile Include="Jogo.cs" />
-    <Compile Include="LotoFacil.cs" />
-    <Compile Include="Map\ApostaSenaMap.cs" />
-    <Compile Include="Map\JogoMap.cs" />
-    <Compile Include="Map\NumeroMapcs.cs" />
-    <Compile Include="MegaSena.cs" />
-    <Compile Include="Numero.cs" />
-    <Compile Include="ProcessaJogos.cs" />
+    <Compile Include="DataSession.cs" />
+    <Compile Include="IniciarBancoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="repo\RepositorioAposta.cs" />
-    <Compile Include="TipoJogo.cs" />
-    <Compile Include="ValueObject.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Loteria\" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Loteria.Domain\Loteria.Domain.csproj">
+      <Project>{3f2d9d36-6c53-423a-9f0f-6f8987b191e8}</Project>
+      <Name>Loteria.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
